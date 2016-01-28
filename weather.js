@@ -2,15 +2,26 @@ $(function() {
   var handleWeatherResponse = function(data) {
     console.log(data);
 
-    // Put your code here to change the "markup" variable. 
+    // Put your code here to change the "markup" variable.
     // Don't change any other code in this file. You will be sad.
-    
-    var markup = "The weather report... " + "will be here when I finish my homework.";
-    
-    
+
+    var markup = "The 3-day forecast is: " + data.daily.summary;
+
+      var temp = "The current conditions today are " + data.currently.temperature + " and " + data.currently.icon;
+
+      var coord = "longitude:" + data.longitude + "      " + "latitude:" + data.latitude
+
+
+
+
+
+
     // End of your code
 
     $('.weather-report').html(markup);
+    $('.weather-temp').html(temp);
+    $('.weather-coord').html(coord);
+
   }
   $('a.get-the-weather').on('click', function(event) {
     event.preventDefault();
